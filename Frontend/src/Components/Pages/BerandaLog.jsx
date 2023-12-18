@@ -98,7 +98,7 @@ const ReviewSection = () => {
               <Card key={product.id}>
                 <Card.Header image={product.url}></Card.Header>
                 <Card.Body title={product.title} place={product.place}></Card.Body>
-                <Card.Footer price={formatPrice(product.price)}></Card.Footer>
+                <Card.Footer price={formatPrice(product.price)} navigate={`/product/${product.id}`}></Card.Footer>
               </Card>
             ))}
           </div>

@@ -34,11 +34,11 @@ const router = createBrowserRouter([
     element: <BerandarLog/>
   },
   {
-    path: '/jelajah',
+    path: '/product',
     element: <JelajahPage/>
   },
   {
-    path: '/detailjelajah',
+    path: '/product/:id',
     element: <DtlJelajahPage/>
   },
   {

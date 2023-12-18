@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import Navbar from '../Elements/NavbarLog'
 import Footer from '../Elements/Footer'
 import ImgDetail from '../../assets/imgDetail.svg'
@@ -17,6 +19,21 @@ import icon5 from '../../assets/icon5.svg'
 import { Link } from 'react-router-dom'
 
 const DetailJelajah = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/products/${id}`);
+        setProduct(response.data); 
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
   return (
     <>
         <Navbar/>
@@ -40,7 +57,7 @@ const DetailJelajah = () => {
         </div>
         <div className="container mx-auto pt-6 px-12" id='desc'>
           <p className='border-2 border-gray-300 w-[60px] rounded-sm text-center font-semibold text-sm py-1 mb-2'>Cafe</p>
-          <h1 className='text-4xl font-bold text-gray-900 mb-2'>Tema Coffee & Space</h1>
+          <h1 className='text-4xl font-bold text-gray-900 mb-2'>{product.title}</h1>
           <div className='mb-2'>
               <div className="flex items-center">
                   <svg className="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">

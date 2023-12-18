@@ -54,13 +54,13 @@ const BodyProduct = (props) => {
 }
 
 const FooterProduct = (props) => {
-  const {price} = props;
+  const {price, navigate} = props;
   return(
     <>
       <div className="px-5 pb-5">
         <div className='flex items-center justify-between'>
           <p className="body1-bold text-purple-700 text-xl">Rp{price}</p>
-          <Link to="/detailjelajah">
+          <Link to={navigate}>
             <button className="inline-flex items-center px-3 py-2 body3-semibold text-center text-white bg-[#4E2167] rounded-sm hover:bg-[#75319B] focus:ring-4 focus:outline-none focus:ring-blue-300">
                 Lihat Detail
             </button>                    
