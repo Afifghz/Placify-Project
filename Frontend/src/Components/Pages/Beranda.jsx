@@ -6,9 +6,15 @@ import Card from '../../Components/Fragments/CardProduct'
 import Img2 from '../../assets/img2.png'
 import Img3 from '../../assets/img3.png'
 import Footer from '../Elements/Footer'
+import ImageSlider from '../Fragments/ImageSlider';
 
 
 const Beranda = () => {
+  const images = [
+    './src/assets/imageSlider/1.png',
+    './src/assets/imageSlider/2.png',
+    './src/assets/imageSlider/3.png'
+  ];
   return (
     <>
         <Navbar />
@@ -27,7 +33,11 @@ const Beranda = () => {
               </div>
             </div>
           </div>
+          <div className="App">
+            <ImageSlider images={images} />
+          </div>
         </div>
+        
         <div className="flex">
           <img src={Banner} alt="" className='w-full' />
         </div>

@@ -1,6 +1,5 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJZYXppZCIsImVtYWlsIjoiZ2hhbmlAZ21haWwuY29tIiwiaWF0IjoxNzAyNzc0NDQ5LCJleHAiOjE3MDI3NzQ0Njl9.aQ09HpyMsmiLEljDlb9w4rAcJ8IO3rTzYTmMNrnNsZ4
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMwLCJuYW1lIjoiWWF6aWQiLCJlbWFpbCI6ImdoYW5pQGdtYWlsLmNvbSIsImlhdCI6MTcwMjk0ODcwMSwiZXhwIjoxNzAyOTQ4NzYxfQ.XbrNqY_oBMRhDP8jBYL-cA_wA1NSJdYHgw6oH1bVZhQ
 ###
 POST http://localhost:5000/users
 Content-Type: application/json
@@ -20,3 +19,9 @@ Content-Type: application/json
     "email" : "ghani@gmail.com",
     "password" : "abcdef"
 }
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout

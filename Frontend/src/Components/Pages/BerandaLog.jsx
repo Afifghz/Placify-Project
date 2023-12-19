@@ -7,15 +7,18 @@ import Img2 from '../../assets/img2.png'
 import Img3 from '../../assets/img3.png'
 import Footer from '../Elements/Footer'
 import axios from 'axios'
-
+import ImageSlider from '../Fragments/ImageSlider';
 
 
 const BerandaLog = () => {
   
+  
   return (
     <>
         <NavbarLog />
+        
         <div className="container mx-auto px-12">
+          
           <HeroSection />
           <ReviewSection />
         </div>
@@ -65,10 +68,15 @@ const BerandaLog = () => {
 }
 
 const HeroSection = () => {
+  const images = [
+    './src/assets/imageSlider/1.png',
+    './src/assets/imageSlider/2.png',
+    './src/assets/imageSlider/3.png'
+  ];
   return (
     <>
-      <div className="flex justify-center items-center h-90">
-          <img src={imgHome} alt="" className='pt-10'/>
+      <div className="mt-8">
+        <ImageSlider images={images} />
       </div>
     </>
   )

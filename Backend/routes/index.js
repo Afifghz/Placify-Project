@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/users', verifyToken, getUsers);
 router.post('/users', Register);
 router.post('/login', Login);
-router.get('/refresh', refreshToken);
+router.get('/token', refreshToken);
 router.delete('/logout', Logout);
 router.get('/products', getProducts);
 router.get('/products/:id', getProductById);

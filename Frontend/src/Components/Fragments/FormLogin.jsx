@@ -41,7 +41,7 @@ const FormLogin = () => {
                 placeholder="********"
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <div className='mt-1 text-end'>
+            <div className='text-end'>
                 <span
                     className='body2-regular text-[#8C2AC8] cursor-pointer'
                     style={{

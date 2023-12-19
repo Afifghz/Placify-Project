@@ -45,7 +45,7 @@ export const Login = async (req, res) => {
         const name = user[0].name;
         const email = user[0].email;
         const accessToken = jwt.sign({userId, name, email}, process.env.ACCESS_TOKEN_SECRET, {
-            expiresIn: '20s'
+            expiresIn: '60s'
         });
         const refreshToken = jwt.sign({userId, name, email}, process.env.REFRESH_TOKEN_SECRET, {
             expiresIn: '1d'
@@ -67,7 +67,7 @@ export const Login = async (req, res) => {
 
 export const Logout = async (req, res) => {
     const refreshToken = req.cookies.refreshToken;
-    if(!refreshToken) return res.sendStatus(401);
+    if(!refreshToken) return res.sendStatus(204);
     const user = await Users.findAll({
         where: {
             refresh_token: refreshToken
@@ -82,4 +82,17 @@ export const Logout = async (req, res) => {
     });
     res.clearCookie('refreshToken');
     return res.sendStatus(200);
+}
+
+export const getUsersById = async (req, res) => {
+    try {
+        const user = await Product.findAll({
+            where: {
+                id: req.params.id
+            }
+        });
+        res.json(user[0]);
+    } catch (error) {
+        console.log(error.message);
+    }
 }
