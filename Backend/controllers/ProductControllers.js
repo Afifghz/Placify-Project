@@ -62,7 +62,6 @@ export const getProductsByFilters = async (req, res) => {
       } else if (order === 'desc') {
         products = await Product.findAll({
           order: [['price', 'DESC']]'attributes
-        });z'
         });
       } else {
         return res.status(400).json({ message: 'Invalid or missing order parameter' });
