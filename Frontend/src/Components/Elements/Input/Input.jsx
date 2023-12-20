@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Input = (props) => {
-  const { type, placeholder, value, onChange } = props;
+  const { type, placeholder, value, onChange, label } = props;
   if (type === 'dropdown') {
     // Jika tipe dropdown, tampilkan elemen dropdown
     return (
@@ -19,6 +19,7 @@ const Input = (props) => {
     placeholder = {placeholder}
     onChange = {onChange}
     value = {value}
+    label = {label}
     />
   )
 }

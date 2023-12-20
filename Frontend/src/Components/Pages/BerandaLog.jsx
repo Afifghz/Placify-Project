@@ -96,13 +96,14 @@ const ReviewSection = () => {
   const formatPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
+  const displayedProducts = products.slice(0, 4);
   return(
     <>
       <div className="flex justify-start items-start h-[80vh]">       
         <div className="flex pt-11 flex-col gap-4">
           <h2 className="text-gray-900">Tempat Pilihan</h2>
           <div className="flex items-start gap-4">
-            {products.map((product) => (
+            {displayedProducts.map((product) => (
               <Card key={product.id}>
                 <Card.Header image={product.url}></Card.Header>
                 <Card.Body title={product.title} place={product.place}></Card.Body>
